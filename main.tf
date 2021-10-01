@@ -7,13 +7,4 @@ resource "azurerm_subnet" "mysubnet1" {
  # virtual_network_address = var.prov-vnet_address
   # address_prefixes     = ["10.0.1.0/24"]
   address_prefixes = var.subnet1-address
-
-  delegation {
-    name = "delegation"
-
-    service_delegation {
-      name    = "Microsoft.ContainerInstance/containerGroups"
-      actions = ["Microsoft.Network/virtualNetworks/subnets/join/action", "Microsoft.Network/virtualNetworks/subnets/prepareNetworkPolicies/action"]
-    }
-  }
 }
